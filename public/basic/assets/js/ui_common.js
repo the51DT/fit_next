@@ -297,27 +297,38 @@ export function adjustToast() {
 }
 
 // tabMenu 
+// tabMenu('.tab__wrap', 'tab');
+// tabMenu('.tab__wrap', 'list');
 export const tabMenu = (el, type) => {
-    document.querySelectorAll('.tab__wrap').forEach(wrap => {
+    if (!el || typeof el !== 'string') return;
+
+    if (type !== 'tab') {
+        sortingList();
+    }
+
+    document.querySelectorAll(el).forEach(wrap => {
         const tabList = wrap.querySelectorAll('.tab__menu li a');
         const tabContents = wrap.querySelectorAll('.tab__content');
 
-        if (!tabList.length || (type === 'tab' && !tabContents.length)) return; // 요소가 없으면 중단
+        if (!tabList.length || (type === 'tab' && !tabContents.length)) return;
+
+        if (type === 'tab' && tabList.length !== tabContents.length) return;
 
         tabList.forEach((list, index) => {
             list.addEventListener('click', (event) => {
                 event.preventDefault();
 
-                // 공통: 현재 활성화된 탭 초기화
                 wrap.querySelector('.tab__menu li.is-active')?.classList.remove('is-active');
                 list.parentElement.classList.add('is-active');
 
-                // type === 'tab'인 경우만 콘텐츠 관리
                 if (type === 'tab') {
                     wrap.querySelector('.tab__content.is-active')?.classList.remove('is-active');
                     tabContents[index]?.classList.add('is-active');
+                } else {
+                    sortingList();
                 }
-            });
+            }, { once: false });
         });
     });
 };
+
