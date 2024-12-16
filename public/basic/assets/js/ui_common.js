@@ -332,3 +332,15 @@ export const tabMenu = (el, type) => {
     });
 };
 
+// 툴팁
+export const tooltip = (el) => {
+    if(!el || typeof el !== 'string') return;
+
+    const toolTipButtons = document.querySelectorAll(el);
+    toolTipButtons.forEach(button => {
+        const tooltip = document.createElement('div');
+        tooltip.classList.add('tooltip');
+        tooltip.innerHTML = button.getAttribute('data-tooltip');
+        button.appendChild(tooltip);
+    });
+}
