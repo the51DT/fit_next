@@ -297,8 +297,8 @@ export function adjustToast() {
 }
 
 // tabMenu 
-// tabMenu('.tab__wrap', 'tab');
-// tabMenu('.tab__wrap', 'list');
+// tabMenu('.tab__wrap', 'tab') 전환방식;
+// tabMenu('.tab__wrap', 'list') 정렬 방식;
 export const tabMenu = (el, type) => {
     if (!el || typeof el !== 'string') return;
 
