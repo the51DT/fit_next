@@ -1,3 +1,11 @@
+/* webfont */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+:root {
+    --fontMain: 'Noto Sans KR', sans-serif;
+}
+
+/* reset */
 body,
 html {
     box-sizing: border-box;
@@ -5,10 +13,6 @@ html {
     padding: 0;
     border: 0;
     font-family: var(--fontMain);
-    background-color: var(--color-basic1);
-    /* background-color: var(--color-white); */
-    /* position: relative;
-    height: 100%; */
 }
 blockquote,
 body,
@@ -114,14 +118,6 @@ caption {
     height: 1px;
     clip: rect(0 0 0 0);
     overflow: hidden;
-}
-.clfx:after {
-    clear: both;
-    content: ".";
-    display: block;
-    height: 0;
-    visibility: hidden;
-    font-size: 0;
 }
 button {
     cursor: pointer;
