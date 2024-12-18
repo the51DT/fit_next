@@ -1,29 +1,7 @@
 // 퍼블 작업시 공통 파일 호출
-document.addEventListener("DOMContentLoaded", function() {
-    loadHeadMeta('../../_inc/head_meta.html');
+document.addEventListener("DOMContentLoaded", function() {    
     loadIncludedHTML();
 });
-
-// 헤더 메타 불로오기
-const loadHeadMeta = url => {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            // 기존 head 태그에 내용 추가
-            var existingHead = document.getElementsByTagName('head')[0];
-            if (existingHead) {
-                existingHead.innerHTML += xhr.responseText;
-            } else {
-                // 만약 head 태그가 없다면 새로 생성하여 추가
-                var headElement = document.createElement('head');
-                headElement.innerHTML = xhr.responseText;
-                document.documentElement.insertBefore(headElement, document.body);
-            }
-        }
-    };
-    xhr.send();
-}
 
 const loadIncludedHTML = () => {
     var allElements = document.getElementsByTagName('*');

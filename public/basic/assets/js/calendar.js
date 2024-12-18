@@ -1,5 +1,5 @@
 // 기간선택
-import { openModal, closeModal } from "../js/ui_common.js";
+// import { openModal, closeModal } from "../js/ui_common.js";
 export const rangeOptionSelector = (start, end) => {
     const startDateInput = document.getElementById(start);
     const endDateInput = document.getElementById(end);
@@ -673,7 +673,7 @@ export const newMonthlyCalendar = (containerId, options) => {
  * displayDay: 'none', 타이틀에 날짜 표시 onlyToday, WeeklyRange, onlyMonthly, none
  * userSwiping: true  스와이핑 기능 사용
  ************************/
-import { swiperCustom } from "../../assets/js/swiper_custom.js";
+// import { swiperCustom } from "../../assets/js/swiper_custom.js";
 export const createWeeklyCalendar = (containerId, options = {}) => {
     const container = document.getElementById(containerId);
     if (!container) {
