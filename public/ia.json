@@ -1,0 +1,40 @@
+{
+    "siteName": "Fit Team Library",
+    "period": "2025.03 ~ 2025.10",    
+    "worker": "",
+    "email": "hongsh@the-51.com",    
+    "IaList": [
+        {
+            "id": 0,
+            "Level1": "가이드",
+            "screenId": "",
+            "fileName": "",
+            "path": "/guide/",
+            "link": "basicGuide",
+            "Level2": [
+                {
+                    "name": "기본 정책",
+                    "screenId": "",
+                    "path": "/guide/",
+                    "fileName": "default"
+                }
+            ]
+        },   
+        {
+            "id": 1,
+            "Level1": "최봄",
+            "screenId": "",
+            "path": "/bchoi",
+            "fileName": "",
+            "link": "#",
+            "Level2": [
+                {
+                    "name": "",
+                    "screenId": "",
+                    "path": "/bchoi/",
+                    "fileName": "#"
+                }
+            ]
+        }        
+    ]
+}
