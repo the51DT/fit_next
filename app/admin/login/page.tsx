@@ -1,34 +1,38 @@
+"use client"
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import { Button, Stack } from '@mui/material';
+import styled from 'styled-components';
+
+const login = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault(); // Prevent default form submission
+    const formData = new FormData(event.currentTarget);
+    const email = formData.get('email');
+    const password = formData.get('password');
+    console.log('Email:', email, 'Password:', password);
+}
+
+const LoginWRap = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+`
 
 export default function LoginPage(){
     return (
-        <Box component="section" sx={{
-                display: 'flex', 
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: '100vh',
-                flexDirection: 'column',
-            }}>
-            <Box component="div" sx={{
-                display: 'flex', 
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexDirection: 'column',
-                width: '100%',
-                maxWidth: '300px',
-                gap: '10px',
-            }}>
-                <TextField fullWidth label="ID" id="fullWidth" />
-                <TextField fullWidth label="PassWord" id="fullWidth" />
-                <Stack spacing={2} direction="row">
-                    <Button variant="contained">로그인</Button>
-                    <Button variant="outlined">가입</Button>
-                </Stack>
-            </Box>
-            
-        </Box>
+        <LoginWRap>
+                <form onSubmit={login}>
+                    <label>
+                        이메일 :
+                        <input type="email" name="email" placeholder="test@test.com" />
+                    </label>
+                    <label>
+                        비밀번호 :
+                        <input type="password" name="password" />
+                    </label>
+                    <button type="submit">로그인</button>
+                </form>
+        </LoginWRap>
     );
 };
